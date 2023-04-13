@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css"/>
+  <title>Speed words</title>
+</head>
+<body>
+  <div class="speedWordsGame">
+    <div class="name">Speed Words</div>
+    <div class="gameLevels">
+            <span class = "select">Choose a Level:</span>
+            <div class="theCustomSelect">
+              <div>
+                <span class="Normal">Normal</span>
+                <span class="arrowHolder"></span>
+                </div>
+                <ul class="decorated" name="levels" style="width:140px">
+                    <li value="1" class="option">Normal</li>
+                    <li value="2" class="option">Easy</li>
+                    <li value="3" class="option">Hard</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="control">
+                  <span>Time Left: <span class="timeLeft"></span> Seconds</span>
+                  <span>Score: <span class="got"></span> From <span class="total"></span></span>
+              </div>
+        <div class="container">
+            <div class="message">
+                You Are Playing ON <span class="lvl"></span> Level & You Have <span class="seconds"></span> seconds To Type The Word
+            </div>
+            <button>Start Playing</button>
+            <div class="theWord"></div>
+            <input title="text" type="text">
+            <div class="theUpcoming_words"></div>
+            <div class="finish"></div>
+        </div>
+    </div>
+    <script src="javascript/main.js"></script>
+</body>
+</html>

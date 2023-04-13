@@ -1,0 +1,293 @@
+*{
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body{
+  min-height: 100vh;
+  background-color: #eee;
+}
+.speedWordsGame {
+  padding: 60px 0;
+  padding-top: 0;
+  min-height: 100vh;
+  position: relative;
+}
+.speedWordsGame .name {
+  background-color: lightskyblue;
+  text-align: center;
+  padding: 22px;
+  font-size: 35px;
+  font-weight: bold;
+  color:rgb(0, 0, 0);
+  letter-spacing:5px
+}
+/* start custom select */
+.gameLevels{
+  margin-top: 20px;
+  top:13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.gameLevels  .theCustomSelect{
+  position: relative;
+}
+.gameLevels  .theCustomSelect > div{
+  background-color: rgb(136, 190, 248);
+  box-shadow: 0px 1px 0 rgb(136, 190, 248), 0px -1px 0 rgb(136, 190, 248);
+  padding: 8px;
+  width: 140px;
+  border:1px solid rgb(105, 177, 205);
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gameLevels .theCustomSelect .arrowHolder{
+  width: 25px;
+  height: 18px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.gameLevels  .theCustomSelect  .arrowHolder::after{
+  content: "";  
+  border-style: solid;
+  border-width:10px 8px 0px ; 
+  border-color: #000 transparent transparent transparent;
+  cursor: pointer;
+}
+.gameLevels ul{
+  padding-left: 0;
+  list-style: none;
+  background-color: rgb(136, 190, 248);
+  box-shadow: 0px 1px 1px rgb(136, 190, 248), 0px -1px 1px rgb(136, 190, 248);
+  padding: 8px;
+  visibility: hidden;
+  position: absolute;
+  left: -19px;
+  margin-top: 6px;
+  cursor: pointer;
+  z-index: 10;
+}
+.gameLevels ul.open{
+  visibility: visible;
+}
+.gameLevels ul li:hover {
+  background-color: #e91e63;
+  color:#fff;
+  border-radius: 4px;
+  padding: 5px;
+}
+.gameLevels ul li {
+  padding: 3px;
+}
+
+/* end custom select */
+
+
+.container {
+  width: 100%; /* Set the container width to 100% */
+  max-width: 1200px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add some padding to the container */
+  text-align: center;
+  
+  /* Use media queries to adjust the container styles for different screen sizes */
+}
+@media screen and (min-width: 768px) {
+  /* If the screen width is 768px or larger, set the container width to 80% and adjust the margins */
+  .container{
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /* If the screen width is 1200px or larger, set the container width to the maximum width and remove the margins */
+  .container{
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.speedWordsGame .container .message{
+  background-color: #fff;
+  padding: 15px;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+.message span{
+  color:#e91e63;
+  font-weight: bold;
+  position:relative;
+  padding:0 20px;
+}
+.message span:before{
+  content:"[";
+  position:absolute;
+  left: 0px;
+  padding: 0 5px;
+}
+.message span:after{
+  content:"]";
+  position:absolute;
+  padding: 0 5px;
+}
+.speedWordsGame .container button{
+  width: 100%;
+  background-color: #e91e63;
+  padding: 18px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing:1px;
+  border: none;
+  margin: 12px 0;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+
+}
+.speedWordsGame .theWord{
+  font-size: 3rem;
+  font-weight: bold;
+  color:rgb(26, 128, 168);
+  user-select: none;
+}
+.speedWordsGame .container input{
+  width: 100%;
+  padding: 14px;
+  border: 3px solid skyblue;
+  margin: 12px 0;
+  caret-color: rgb(125, 200, 229);
+  font-size: 1.5rem;
+
+}
+.speedWordsGame .container input:focus{
+  outline: none;
+}
+.theUpcoming_words{
+  width: 100%;
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 25px;
+  background-color: #fff;
+  margin: 12px 0;
+  border-radius: 4px;
+  flex-wrap: wrap;
+}
+.theUpcoming_words span{
+  width: auto;
+  min-height: 40px;
+  max-height: 50px;
+  background-color: #2a86ac;
+  min-width: 70px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  user-select: none;
+  padding: 10px;
+}
+.the_words div{
+  background-color: skyblue;
+  padding: 12px;
+  text-transform: capitalize;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 4px;
+
+}
+.control{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  background: black;
+  color: #fff;
+  padding: 5px 25px;
+  font-weight: bold;
+}
+.control span span{
+  color:#e91e63;
+  font-weight: bold;
+}
+.GameOver  {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e91e63;
+  font-size: 2.7rem;
+  margin-top: 15px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50%;
+  width: 100%;
+  background: black;
+  padding: 18px;;
+}
+@media(max-width:768px) {
+  .theUpcoming_words {
+    padding: 0;
+  }
+  .theUpcoming_words span {
+    padding:10px 0;
+    width: 50px;
+    width: 30%;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+  }
+  .speedWordsGame .theWord {
+    font-size: 2.5rem;
+  }
+  
+  .GameOver{
+    font-size: 2rem;
+  }
+}
+@media(max-width:280px) {
+  .GameOver{
+    font-size: 1.5rem;
+  }
+}
+.GameOver .restartBtn{
+  all:initial;
+  background-color: #fff;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 17px;
+  border-radius: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+}
+.speedWordsGame .good  {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color:rgb(73, 101, 184);
+  font-size: 2.7rem;
+  margin-top: 15px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+
+/* end css */
