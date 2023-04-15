@@ -1,6 +1,6 @@
 // make the array of words
 const getData = async () => {
-  const res = await fetch("../data/data.json");
+  const res = await fetch("https://abdelrhman-shibl44.github.io/speed-words/data/data.json");
   const data = await res.json();
   const words = data.map((item) => item.word);
   return words;
