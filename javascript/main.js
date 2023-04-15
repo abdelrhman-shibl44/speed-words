@@ -20,7 +20,6 @@ const normalVl  = document.querySelector(".Normal");
 const levelSpan = document.querySelector(".message > span");
 const arrowHolder = document.querySelector(".arrowHolder");
 let state = sessionStorage.getItem("state") || "Normal"
-console.log(state)
 // Setting Levels
 const lvls = {
   Easy: 6,
@@ -85,12 +84,11 @@ async function getRandomWord() {
   words = await getData();
   const lengthOfWords = words.length;
   totalSpan.innerText = lengthOfWords;
-   randomWord = words[Math.floor(Math.random() * 50)];
+   randomWord = words[Math.floor(Math.random() * lengthOfWords)];
    // get the indexOf the word
   const wordIndex = words.indexOf(randomWord);
    // remove the word from the page by its index
   words.splice(wordIndex, 1);
-  console.log(words);
    // empty the upcoming words
   upcomingWords.innerText = "";
    // put the randomword to the page
